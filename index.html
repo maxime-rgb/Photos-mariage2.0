@@ -6,7 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partage de Photos de Mariage</title>
     <link rel="stylesheet" href="style.css">
-    <!-- L'ancien bloc <style> inline est supprimé, ses règles seront dans style.css -->
+    <style>
+        /* ... (vos styles existants) ... */
+        /* Styles pour la barre de progression */
+        
+        .file-upload-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #fdfdfd;
+        }
+        
+        .file-upload-item .filename {
+            flex-grow: 1;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .file-upload-item .progress-bar-container {
+            width: 150px;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .file-upload-item .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #4CAF50;
+            /* Vert */
+            border-radius: 5px;
+            transition: width 0.1s ease-out;
+            /* Animation douce */
+        }
+        
+        .file-upload-item .status-text {
+            margin-left: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,17 +62,15 @@
             <h1>Partagez vos souvenirs du mariage !</h1>
             <p>Sélectionnez une ou plusieurs photos/vidéos à envoyer.</p>
 
-            <!-- L'input file existant, on lui ajoute un id pour le JS -->
             <input type="file" id="fileInput" multiple accept="image/*,video/*">
-
-            <!-- Nouveau bouton pour déclencher l'upload -->
             <button id="uploadButton" disabled>Envoyer les fichiers</button>
 
-            <!-- La div message existante, on lui donne un id pour le JS -->
             <div id="messages"></div>
+
+            <!-- Nouvelle zone pour les barres de progression -->
+            <div id="upload-progress-container" style="margin-top: 20px;"></div>
         </div>
 
-        <!-- Nouvelle section pour afficher les médias uploadés -->
         <div id="uploaded-media-container">
             <h2>Vos médias envoyés</h2>
             <div id="uploaded-media-grid">
@@ -42,7 +83,6 @@
         <p>&copy; 2023 Votre Nom. Tous droits réservés.</p>
     </footer>
 
-    <!-- Votre script JavaScript, son contenu sera celui de la réponse précédente -->
     <script src="script.js"></script>
 </body>
 
