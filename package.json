@@ -1,0 +1,19 @@
+{
+    "name": "mariage-photos-app",
+    "version": "1.0.0",
+    "description": "Application pour le partage de photos de mariage",
+    "main": "index.js",
+    "scripts": {
+        "start": "netlify dev"
+    },
+    "keywords": [],
+    "author": "Maxime THOMAS",
+    "license": "ISC",
+    "dependencies": {
+        "busboy": "^1.6.0",
+        "cloudinary": "^1.41.0"
+    },
+    "devDependencies": {
+        "netlify-cli": "^17.1.0"
+    }
+}

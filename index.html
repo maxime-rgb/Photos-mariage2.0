@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage de Photos de Mariage</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- L'ancien bloc <style> inline est supprimé, ses règles seront dans style.css -->
+</head>
+
+<body>
+    <header>
+        <h1>Application de Partage de Photos de Mariage</h1>
+    </header>
+
+    <main>
+        <div id="upload-section">
+            <h1>Partagez vos souvenirs du mariage !</h1>
+            <p>Sélectionnez une ou plusieurs photos/vidéos à envoyer.</p>
+
+            <!-- L'input file existant, on lui ajoute un id pour le JS -->
+            <input type="file" id="fileInput" multiple accept="image/*,video/*">
+
+            <!-- Nouveau bouton pour déclencher l'upload -->
+            <button id="uploadButton" disabled>Envoyer les fichiers</button>
+
+            <!-- La div message existante, on lui donne un id pour le JS -->
+            <div id="messages"></div>
+        </div>
+
+        <!-- Nouvelle section pour afficher les médias uploadés -->
+        <div id="uploaded-media-container">
+            <h2>Vos médias envoyés</h2>
+            <div id="uploaded-media-grid">
+                <!-- Les images/vidéos uploadées s'afficheront ici -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Votre Nom. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Votre script JavaScript, son contenu sera celui de la réponse précédente -->
+    <script src="script.js"></script>
+</body>
+
+</html>

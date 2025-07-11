@@ -1,0 +1,113 @@
+/* --- NOUVEAUX STYLES À AJOUTER POUR LES ÉLÉMENTS MIS À JOUR --- */
+
+
+/* Section d'upload */
+
+#upload-section {
+    padding-bottom: 20px;
+    /* Ajoute de l'espace en bas de la section d'upload */
+    margin-bottom: 20px;
+    /* Sépare de la section des médias uploadés */
+    border-bottom: 1px solid #eee;
+    /* Ligne de séparation visuelle */
+}
+
+
+/* Bouton d'upload spécifique */
+
+#uploadButton {
+    background-color: #5cb85c;
+    /* Couleur du bouton d'upload d'origine */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#uploadButton:hover:not(:disabled) {
+    background-color: #4cae4c;
+    /* Couleur au survol */
+}
+
+#uploadButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* Messages d'état */
+
+#messages {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    min-height: 30px;
+    /* Pour éviter le "saut" de contenu */
+    border-radius: 4px;
+    text-align: center;
+    /* Centre le texte des messages */
+}
+
+.success {
+    color: green;
+    border-color: green;
+    background-color: #e6ffe6;
+}
+
+.error {
+    color: red;
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+.info {
+    color: blue;
+    border-color: blue;
+    background-color: #e6f2ff;
+}
+
+
+/* Conteneur des médias uploadés */
+
+#uploaded-media-container {
+    margin-top: 30px;
+    /* Espace par rapport à la section d'upload */
+    padding-top: 20px;
+}
+
+#uploaded-media-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Grille des médias uploadés (remplace l'ancienne <ul>) */
+
+#uploaded-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    list-style: none;
+    /* Au cas où il y aurait un style de liste par défaut */
+    padding: 0;
+    /* Au cas où il y aurait un padding par défaut */
+}
+
+
+/* Styles spécifiques pour les images et vidéos dans la grille */
+
+#uploaded-media-grid img,
+#uploaded-media-grid video {
+    width: 100%;
+    height: 150px;
+    /* Hauteur fixe pour des éléments de grille uniformes */
+    object-fit: cover;
+    /* Recadre l'image/vidéo pour remplir le cadre */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    /* Supprime la marge du bas de la règle générale */
+}
