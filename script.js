@@ -97,11 +97,23 @@ uploadButton.addEventListener('click', async() => {
 
 // --- Fonctions Utilitaires ---
 
+
+/**
+ * Affiche un message à l'utilisateur.
+ * @param {string} message Le message à afficher.
+ * @param {string} type Le type de message ('info', 'success', 'error').
+ */
 function displayMessage(message, type) {
     messagesDiv.innerHTML = message;
-    messagesDiv.className = '';
-    if (type) {
-        messagesDiv.classList.add(type);
+    messagesDiv.className = ''; // Réinitialiser les classes
+
+    if (message) { // Si un message est fourni (non vide)
+        messagesDiv.style.display = 'block'; // Afficher la div
+        if (type) {
+            messagesDiv.classList.add(type);
+        }
+    } else { // Si le message est vide
+        messagesDiv.style.display = 'none'; // Masquer la div
     }
 }
 

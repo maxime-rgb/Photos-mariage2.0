@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partage de Photos de Mariage</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Le bloc <style> inline pour les barres de progression peut rester ici ou être déplacé dans style.css -->
     <style>
-        /* ... (vos styles existants) ... */
-        /* Styles pour la barre de progression */
+        /* Styles pour la barre de progression (peut être déplacé dans style.css) */
         
         .file-upload-item {
             display: flex;
@@ -38,10 +38,8 @@
             height: 100%;
             width: 0%;
             background-color: #4CAF50;
-            /* Vert */
             border-radius: 5px;
             transition: width 0.1s ease-out;
-            /* Animation douce */
         }
         
         .file-upload-item .status-text {
@@ -53,35 +51,39 @@
 </head>
 
 <body>
-    <header>
-        <h1>Application de Partage de Photos de Mariage</h1>
-    </header>
 
     <main>
-        <div id="upload-section">
-            <h1>Partagez vos souvenirs du mariage !</h1>
-            <p>Sélectionnez une ou plusieurs photos/vidéos à envoyer.</p>
+        <!-- Nouvelle div pour la carte principale -->
+        <div id="app-card">
+            <!-- Conteneur pour la photo de profil circulaire -->
+            <div class="profile-pic-container">
+                <!-- REMPLACEZ 'URL_DE_VOTRE_PHOTO_DE_MARIAGE' par l'URL réelle de votre photo -->
+                <img src="/images/Design sans titre.png" alt="Photo de mariage" class="profile-pic">
+            </div>
 
-            <input type="file" id="fileInput" multiple accept="image/*,video/*">
-            <button id="uploadButton" disabled>Envoyer les fichiers</button>
+            <div id="upload-section">
+                <h1>Bienvenue à notre mariage</h1>
+                <p>Sélectionnez vos photos ou vidéos à nous envoyer</p>
 
-            <div id="messages"></div>
+                <input type="file" id="fileInput" multiple accept="image/*,video/*">
+                <button id="uploadButton" disabled>Envoyer les fichiers</button>
 
-            <!-- Nouvelle zone pour les barres de progression -->
-            <div id="upload-progress-container" style="margin-top: 20px;"></div>
-        </div>
+                <p class="warning">Attention à ne pas envoyer des fichiers trop lourd</br>Envoyez vos photos en plusieurs fois</p>
 
-        <div id="uploaded-media-container">
-            <h2>Vos médias envoyés</h2>
-            <div id="uploaded-media-grid">
-                <!-- Les images/vidéos uploadées s'afficheront ici -->
+                <div id="messages"></div>
+
+                <div id="upload-progress-container" style="margin-top: 20px;"></div>
+            </div>
+
+            <div id="uploaded-media-container">
+                <h2>Vos médias envoyés</h2>
+                <div id="uploaded-media-grid">
+                    <!-- Les images/vidéos uploadées s'afficheront ici -->
+                </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Votre Nom. Tous droits réservés.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>

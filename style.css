@@ -1,15 +1,144 @@
-/* --- NOUVEAUX STYLES À AJOUTER POUR LES ÉLÉMENTS MIS À JOUR --- */
+/* --- Styles généraux du corps et de la mise en page --- */
+
+body {
+    display: flex;
+    /* Utilise flexbox pour organiser les sections */
+    flex-direction: column;
+    /* Empile header, main, footer verticalement */
+    min-height: 100vh;
+    /* Assure que le corps prend toute la hauteur de la fenêtre */
+    margin: 0;
+    padding: 0;
+    /* REMPLACEZ CETTE URL PAR VOTRE IMAGE CARRÉE */
+    background-size: cover;
+    /* L'image couvrira toute la zone, quitte à être coupée */
+    background-position: center center;
+    /* Centre l'image */
+    background-repeat: no-repeat;
+    /* L'image ne se répète pas */
+    background-attachment: fixed;
+    /* L'image reste fixe lors du défilement (effet parallax) */
+    /* --- FIN DES STYLES DE FOND --- */
+    background-color: #f4f4f4;
+    /* Couleur de fond de secours si l'image ne charge pas ou pour les zones transparentes */
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+    /* Permet à main de prendre l'espace disponible, poussant le footer vers le bas */
+    display: flex;
+    /* Utilise flexbox pour centrer la carte */
+    justify-content: center;
+    /* Centre la carte horizontalement */
+    align-items: flex-start;
+    /* Aligne la carte en haut, pas au centre verticalement, pour éviter qu'elle ne flotte trop haut */
+    padding: 20px;
+    /* Ajoute un peu de padding autour de la carte */
+}
 
 
-/* Section d'upload */
+/* --- Styles de la nouvelle carte principale --- */
 
-#upload-section {
-    padding-bottom: 20px;
-    /* Ajoute de l'espace en bas de la section d'upload */
+#app-card {
+    background-image: url("./images/Invitation\ Mariage.png");
+    border-radius: 12px;
+    /* Rayon de bordure légèrement plus grand pour un aspect plus doux */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Ombre plus prononcée pour la profondeur */
+    padding: 30px;
+    /* Plus de padding à l'intérieur de la carte */
+    max-width: 600px;
+    /* Limite la largeur de la carte */
+    width: 100%;
+    /* S'assure qu'elle prend toute la largeur disponible jusqu'à max-width */
+    box-sizing: border-box;
+    /* Inclut le padding dans le calcul de la largeur */
+    margin-top: 20px;
+    /* Marge du haut pour espacer du header */
     margin-bottom: 20px;
-    /* Sépare de la section des médias uploadés */
-    border-bottom: 1px solid #eee;
-    /* Ligne de séparation visuelle */
+    /* Marge du bas pour espacer du footer */
+}
+
+
+/* --- Styles de la photo de profil circulaire --- */
+
+.profile-pic-container {
+    text-align: center;
+    /* Centre l'image dans son conteneur */
+    margin-bottom: 30px;
+    /* Espace sous l'image */
+}
+
+.warning {
+    font-size: 0.8em;
+}
+
+.profile-pic {
+    width: 150px;
+    /* Taille de l'image circulaire */
+    height: 150px;
+    border-radius: 50%;
+    /* Rend l'image circulaire */
+    object-fit: cover;
+    /* S'assure que l'image couvre le cercle sans distorsion */
+    border: 5px solid #f0f0f0;
+    /* Bordure claire autour du cercle */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile pour la profondeur */
+}
+
+
+/* --- Styles des titres et paragraphes --- */
+
+h1,
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+
+/* Le h1 de la section d'upload */
+
+#upload-section h1 {
+    margin-top: 0;
+    /* Supprime la marge supérieure par défaut pour coller à la photo */
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* --- Styles des éléments de formulaire et boutons --- */
+
+
+/* La balise <form> n'est plus utilisée directement pour l'upload, mais ces styles peuvent rester pour d'autres formulaires */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="file"],
+button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 
@@ -34,7 +163,7 @@
 }
 
 
-/* Messages d'état */
+/* --- Styles des messages d'état --- */
 
 #messages {
     margin-top: 20px;
@@ -42,10 +171,10 @@
     border: 1px solid #eee;
     background-color: #f9f9f9;
     min-height: 30px;
-    /* Pour éviter le "saut" de contenu */
     border-radius: 4px;
     text-align: center;
-    /* Centre le texte des messages */
+    /* --- NOUVELLE RÈGLE POUR MASQUER PAR DÉFAUT --- */
+    display: none;
 }
 
 .success {
@@ -61,17 +190,66 @@
 }
 
 .info {
-    color: blue;
-    border-color: blue;
+    color: rgb(99, 99, 99);
+    border-color: rgb(99, 99, 99);
     background-color: #e6f2ff;
 }
 
 
-/* Conteneur des médias uploadés */
+/* --- Styles pour la barre de progression --- */
+
+.file-upload-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+}
+
+.file-upload-item .filename {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.file-upload-item .progress-bar-container {
+    width: 150px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.file-upload-item .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    transition: width 0.1s ease-out;
+}
+
+.file-upload-item .status-text {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+/* --- Styles de la section d'upload --- */
+
+#upload-section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* --- Styles du conteneur des médias uploadés --- */
 
 #uploaded-media-container {
     margin-top: 30px;
-    /* Espace par rapport à la section d'upload */
     padding-top: 20px;
 }
 
@@ -82,7 +260,7 @@
 }
 
 
-/* Grille des médias uploadés (remplace l'ancienne <ul>) */
+/* Grille des médias uploadés */
 
 #uploaded-media-grid {
     display: grid;
