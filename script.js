@@ -1,7 +1,7 @@
 // --- Configuration Cloudinary ---
 // REMPLACEZ CES VALEURS PAR LES VÔTRES !
-const CLOUD_NAME = 'VOTRE_CLOUD_NAME'; // Ex: 'dpxxxxxxx'
-const UPLOAD_PRESET = 'VOTRE_UPLOAD_PRESET'; // Ex: 'mariage_photos_unsigned'
+const CLOUD_NAME = 'photosmariage'; // Ex: 'dpxxxxxxx'
+const UPLOAD_PRESET = 'ml_default'; // Ex: 'mariage_photos_unsigned'
 
 // --- Références aux éléments HTML ---
 const fileInput = document.getElementById('fileInput');
